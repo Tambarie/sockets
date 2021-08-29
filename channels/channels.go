@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
 func main()  {
 	// using var
@@ -16,4 +19,6 @@ func main()  {
 
 	funcChan := make(chan func())
 	close(funcChan)
+
+	fmt.Println("cpus",runtime.NumCPU())
 }
